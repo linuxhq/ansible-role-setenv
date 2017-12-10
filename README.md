@@ -43,7 +43,7 @@ Assuming your inventory hostname is tkimball83.plex.linuxhq.org, this role will 
 
 ## License
 
-BSD
+GPLv3
 
 ## Author Information
 

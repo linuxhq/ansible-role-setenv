@@ -24,3 +24,4 @@
   set_fact:
     local_domain: "{{ local_env }}.{{ local_tld }}"
     local_search: "{{ local_product }}.{{ local_env }}.{{ local_tld }}"
+...
