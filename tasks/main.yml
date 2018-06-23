@@ -1,17 +1,17 @@
 ---
-- name: Set local_fqdn fact (inventory_hostname)
+- name: Attempting to set local_fqdn fact if inventory_hostname is not localhost
   tags: setenv
   set_fact:
     local_fqdn: "{{ inventory_hostname }}"
   when: inventory_hostname != 'localhost'
 
-- name: Set local_fqdn fact (ansible_fqdn)
+- name: Attempting to set local_fqdn fact if inventory_hostname is localhost
   tags: setenv
   set_fact:
     local_fqdn: "{{ ansible_fqdn }}"
   when: inventory_hostname == 'localhost'
 
-- name: Set class, product, env, and tld facts
+- name: Attempting to set class, product, env, and tld facts
   tags: setenv
   set_fact:
     local_class: "{{ local_fqdn.split('.')[0] }}"
@@ -19,7 +19,7 @@
     local_env: "{{ local_fqdn.split('.')[2] }}"
     local_tld: "{{ local_fqdn.split('.')[3] }}"
 
-- name: Set domain and search facts
+- name: Attempting to set domain and search facts
   tags: setenv
   set_fact:
     local_domain: "{{ local_env }}.{{ local_tld }}"
