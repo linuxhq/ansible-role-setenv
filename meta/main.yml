@@ -1,6 +1,7 @@
 ---
 dependencies: []
 galaxy_info:
+  role_name: setenv
   author: tkimball83
   description: RHEL/CentOS - Set local environment variables
   license: GPLv3
